@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='gallery.css') }}">
+    <title>{% block title %} {% endblock %}</title>
+</head>
+<body>
+    <h1 class="header">{% block header %} {% endblock %}</h1>
+    <div class="navigation">
+        <a class="navigation_link" href="{{ url_for('index') }}">Home</a>
+        <a class="navigation_link" href="{{ url_for('gallery') }}">Gallery</a>
+        <a class="navigation_link" href="{{ url_for('contact') }}">Contact</a>
+        <a class="navigation_link" href="{{ url_for('about') }}">About</a>
+    </div>
+    <br>
+    <hr>
+    <br>
+    <div class="content">
+        {% block content %} {% endblock %}
+    </div>
+</body>
+</html>
